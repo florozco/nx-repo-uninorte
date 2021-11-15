@@ -7,18 +7,18 @@ const StyledCountries = styled.div`
 `;
 
 export function Countries(props: IndexProps) {
-  let [countriesArray] = useCountries();
+  let [ countriesArray ] = useCountries();
   const countries = props.countries ? props.countries : countriesArray;
 
   return (
     <StyledCountries>
       <h1>Countries</h1>
       {
-        countries && countries.length > 0
-          ?
-          countries.map(({ code, name }) => <li key={code}>{code} - {name}</li>)
-          :
-          <p>no data</p>
+        countries && countries.length > 0 
+        ?
+        countries.map(({code, name}) => <li key={code}>{code} - {name}</li>)
+        :
+        <p>no data</p>
       }
     </StyledCountries>
   );
